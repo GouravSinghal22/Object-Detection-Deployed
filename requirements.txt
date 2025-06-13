@@ -1,2 +1,5 @@
 streamlit
-opencv-python
+opencv-pythonopencv-python
+numpy
+os
+yaml
