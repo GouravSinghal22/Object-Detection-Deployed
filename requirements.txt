@@ -1,5 +1,5 @@
 streamlit
-opencv-pythonopencv-python
+opencv-python
 numpy
 os
 yaml
