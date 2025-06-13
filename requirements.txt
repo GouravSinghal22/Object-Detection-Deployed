@@ -1,4 +1,8 @@
 streamlit
 opencv-python
+cv2
 numpy
 yaml
+streamlit_webrtc
+av
+PIL
