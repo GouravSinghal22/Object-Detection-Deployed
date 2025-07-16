@@ -1,5 +1,6 @@
 import streamlit as st 
 from streamlit_webrtc import webrtc_streamer
+from streamlit_webrtc import RTCConfiguration
 import av
 import cv2
 from yolo_predictions import YOLO_Pred
@@ -23,7 +24,12 @@ def video_frame_callback(frame):
 
     return av.VideoFrame.from_ndarray(pred_img, format="bgr24")
 
+RTC_CONFIGURATION = RTCConfiguration({
+    "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+})
 
 webrtc_streamer(key="example", 
                 video_frame_callback=video_frame_callback,
-                media_stream_constraints={"video":True,"audio":False})
+                media_stream_constraints={"video":True,"audio":False},
+                rtc_configuration=RTC_CONFIGURATION)
+
